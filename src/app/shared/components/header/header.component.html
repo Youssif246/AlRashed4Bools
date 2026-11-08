@@ -1,0 +1,129 @@
+<!-- Top Contact Information Strip -->
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <div class="top-bar-items">
+      <div class="top-bar-item">
+        <i class="fa-solid fa-location-dot top-bar-icon"></i>
+        <span>{{ company.location.city }} — {{ company.location.district }}</span>
+      </div>
+      <div class="top-bar-item">
+        <i class="fa-solid fa-clock-rotate-left top-bar-icon"></i>
+        <span>خدمة متواصلة | كود البناء السعودي</span>
+      </div>
+    </div>
+
+    <div class="top-bar-contacts">
+      <a [href]="company.whatsappUrl" target="_blank" rel="noopener noreferrer" class="top-contact-link whatsapp" aria-label="مراسلة واتساب">
+        <i class="fa-brands fa-whatsapp top-bar-icon"></i>
+        <span>واتساب مباشر</span>
+      </a>
+      <a [href]="'tel:' + company.phoneInternational" class="top-contact-link phone" aria-label="الاتصال هاتفياً">
+        <i class="fa-solid fa-phone top-bar-icon"></i>
+        <span dir="ltr">{{ company.phoneDisplay }}</span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Main Sticky Header -->
+<header class="main-header" [class.scrolled]="isScrolled()">
+  <div class="container header-inner">
+    <!-- Brand Logo -->
+    <a routerLink="/" class="brand-logo" aria-label="شركة الراشد للمسابح والعوازل - الصفحة الرئيسية">
+      <img src="/ALRASHID-Logo.png" alt="شعار شركة الراشد للمسابح والعوازل والمقاولات العامة" width="54" height="54" priority class="brand-logo-img">
+      <div class="brand-title-wrap">
+        <strong class="brand-title-main">شركة الراشد</strong>
+        <span class="brand-title-sub">للمسابح والعوازل والمقاولات العامة</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="desktop-nav" aria-label="القائمة الرئيسية">
+      <ul class="nav-list">
+        @for (link of navLinks; track link.route) {
+          <li class="nav-item">
+            <a [routerLink]="link.route" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: link.route === '/' }" class="nav-link">
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <!-- Header Actions (CTA) -->
+    <div class="header-actions">
+      <a [href]="company.whatsappQuoteUrl" target="_blank" rel="noopener noreferrer" class="btn btn-primary quote-btn">
+        <i class="fa-solid fa-file-invoice"></i>
+        <span>اطلب عرض سعر</span>
+      </a>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button type="button" 
+              class="mobile-menu-btn" 
+              [attr.aria-expanded]="isMobileMenuOpen()" 
+              aria-label="تبديل القائمة"
+              (click)="toggleMobileMenu()">
+        @if (!isMobileMenuOpen()) {
+          <i class="fa-solid fa-bars fa-lg"></i>
+        } @else {
+          <i class="fa-solid fa-xmark fa-lg"></i>
+        }
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" [class.open]="isMobileMenuOpen()">
+  <div class="drawer-backdrop" (click)="closeMobileMenu()"></div>
+  <div class="drawer-content" role="dialog" aria-modal="true" aria-label="قائمة الجوال">
+    <div class="drawer-header">
+      <div class="brand-logo">
+        <img src="/ALRASHID-Logo.png" alt="شعار الراشد" width="46" height="46" class="brand-logo-img">
+        <div class="brand-title-wrap">
+          <strong class="brand-title-main">شركة الراشد</strong>
+          <span class="brand-title-sub">للمسابح والعوازل</span>
+        </div>
+      </div>
+      <button type="button" class="drawer-close-btn" (click)="closeMobileMenu()" aria-label="إغلاق القائمة">
+        <i class="fa-solid fa-xmark fa-lg"></i>
+      </button>
+    </div>
+
+    <nav class="drawer-nav">
+      <ul>
+        @for (link of navLinks; track link.route) {
+          <li>
+            <a [routerLink]="link.route" 
+               routerLinkActive="active" 
+               [routerLinkActiveOptions]="{ exact: link.route === '/' }"
+               (click)="closeMobileMenu()" 
+               class="drawer-link">
+              {{ link.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="drawer-footer">
+      <a [href]="company.whatsappQuoteUrl" target="_blank" rel="noopener noreferrer" (click)="closeMobileMenu()" class="btn btn-primary btn-full">
+        <i class="fa-solid fa-file-invoice"></i>
+        <span>اطلب عرض سعر الآن</span>
+      </a>
+      
+      <div class="drawer-contacts">
+        <a [href]="company.whatsappUrl" target="_blank" rel="noopener noreferrer" class="btn btn-outline-dark btn-full whatsapp-drawer-btn">
+          <i class="fa-brands fa-whatsapp"></i>
+          <span>مراسلة عبر واتساب</span>
+        </a>
+        <a [href]="'tel:' + company.phoneInternational" class="drawer-phone-link">
+          <i class="fa-solid fa-phone"></i>
+          <span>هاتف مباشر:</span>
+          <strong dir="ltr">{{ company.phoneDisplay }}</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
