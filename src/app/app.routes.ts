@@ -8,6 +8,11 @@ export const routes: Routes = [
     title: 'شركة الراشد للمسابح والعوازل والمقاولات العامة | الأحساء'
   },
   {
+    path: 'about',
+    loadComponent: () => import('./pages/about/about.component').then(m => m.AboutComponent),
+    title: 'من نحن — شركة الراشد للمسابح والعوازل والمقاولات العامة'
+  },
+  {
     path: '**',
     redirectTo: ''
   }
