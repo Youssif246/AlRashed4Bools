@@ -13,6 +13,16 @@ export const routes: Routes = [
     title: 'من نحن — شركة الراشد للمسابح والعوازل والمقاولات العامة'
   },
   {
+    path: 'services',
+    loadComponent: () => import('./pages/services/services.component').then(m => m.ServicesComponent),
+    title: 'خدماتنا — شركة الراشد للمسابح والعوازل والمقاولات العامة'
+  },
+  {
+    path: 'contact',
+    loadComponent: () => import('./pages/contact/contact.component').then(m => m.ContactComponent),
+    title: 'تواصل معنا — شركة الراشد للمسابح والعوازل والمقاولات العامة'
+  },
+  {
     path: '**',
     redirectTo: ''
   }

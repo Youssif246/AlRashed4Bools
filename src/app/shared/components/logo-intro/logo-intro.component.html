@@ -1,0 +1,97 @@
+<div class="intro-overlay" [class.fading-out]="isFadingOut()" role="dialog" aria-modal="true"
+  aria-label="شعار شركة الراشد للمسابح والعوازل">
+  <!-- Soft Ambient Gallery Glow -->
+  <div class="ambient-glow" aria-hidden="true"></div>
+
+  <!-- Minimal Blueprint HUD Corner Crosshairs -->
+  <div class="hud-corners" aria-hidden="true">
+    <span class="hud-mark tl">+</span>
+    <span class="hud-mark tr">+</span>
+    <span class="hud-mark bl">+</span>
+    <span class="hud-mark br">+</span>
+  </div>
+
+  <!-- Sleek Skip Button -->
+  <button type="button" class="btn-skip" (click)="skip()" aria-label="تخطي المقدمة">
+    <span class="skip-text">تخطي</span>
+    <i class="fa-solid fa-arrow-left" aria-hidden="true"></i>
+  </button>
+
+  <!-- Unified Cohesive Brand Monolith -->
+  <div class="brand-monolith" [attr.data-scene]="currentScene()">
+
+    <!-- Central Emblem Assembly -->
+    <div class="emblem-container">
+
+      <!-- Ambient Backlight Glow -->
+      <div class="emblem-ambient-aura" aria-hidden="true"></div>
+
+      <!-- Integrated Circular Framing Arcs Embracing the Logo -->
+      <svg class="drawing-svg" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="auraOrange" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#FF7B54" />
+            <stop offset="100%" stop-color="#F26D3D" />
+          </linearGradient>
+
+          <linearGradient id="auraCyan" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#38BDF8" />
+            <stop offset="100%" stop-color="#00A3C4" />
+          </linearGradient>
+
+          <filter id="arcGlow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+
+        <!-- Subtle Compass Framing Ring -->
+        <circle cx="250" cy="250" r="236" stroke="#00A3C4" stroke-opacity="0.12" stroke-width="1"
+          stroke-dasharray="3 5" />
+        <circle cx="250" cy="250" r="245" stroke="#00A3C4" stroke-opacity="0.06" stroke-width="0.75" />
+
+        <!-- Layer Arcs: Dual Brand Arcs Embracing the Logo Rim -->
+        <g class="layer-arcs">
+          <!-- The Orange Solar Arc -->
+          <path class="arc-orange" d="M 250 14 A 236 236 0 0 1 486 250" stroke="url(#auraOrange)" stroke-width="3"
+            stroke-linecap="round" filter="url(#arcGlow)" />
+
+          <!-- The Turquoise Wave Arc -->
+          <path class="arc-turquoise" d="M 250 486 A 236 236 0 0 1 14 250" stroke="url(#auraCyan)" stroke-width="3"
+            stroke-linecap="round" filter="url(#arcGlow)" />
+        </g>
+
+        <!-- Layer Emblem: Microscopic Registration Accents -->
+        <g class="layer-emblem">
+          <line x1="240" y1="14" x2="260" y2="14" stroke="#F26D3D" stroke-opacity="0.5" stroke-width="1.5" />
+          <line x1="240" y1="486" x2="260" y2="486" stroke="#00A3C4" stroke-opacity="0.5" stroke-width="1.5" />
+          <line x1="14" y1="240" x2="14" y2="260" stroke="#00A3C4" stroke-opacity="0.5" stroke-width="1.5" />
+          <line x1="486" y1="240" x2="486" y2="260" stroke="#F26D3D" stroke-opacity="0.5" stroke-width="1.5" />
+        </g>
+      </svg>
+
+      <!-- Official Logo Image Container -->
+      <div class="logo-box">
+        <img src="/ALRASHID-Logo.png" alt="شركة الراشد للمسابح والعوازل والمقاولات العامة" class="official-logo-img"
+          width="320" height="320" loading="eager" />
+
+        <!-- Luxury Diamond Light Sheen Sweep Across Logo -->
+        <div class="logo-light-sheen" aria-hidden="true"></div>
+
+        <!-- Microscopic Star Glint Flash -->
+        <div class="star-glint" aria-hidden="true"></div>
+      </div>
+
+    </div>
+
+    <!-- Architectural Brand Typography (Split into 2 balanced lines) -->
+    <div class="logo-brand-caption">
+      <div class="caption-divider"></div>
+      <h1 class="caption-company-name">
+        <span class="name-brand">شركة الراشد</span>
+        <span class="name-activity">للمسابح والعوازل والمقاولات العامة</span>
+      </h1>
+    </div>
+
+  </div>
+</div>

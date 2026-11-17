@@ -1,0 +1,480 @@
+<!-- ==========================================================================
+     PAGE HERO — SERVICES (SWIMMING POOLS & ENGINEERING FLAGSHIP)
+     ========================================================================== -->
+<section class="services-hero">
+  <div class="services-hero-bg">
+    <img src="/last-projects/Panoramic-Infinity-Edge-Pool.jpg" 
+         alt="بناء وتجهيز المسابح والعوازل والمقاولات - شركة الراشد" 
+         class="services-hero-img" 
+         fetchpriority="high"
+         width="1920" 
+         height="750">
+    <div class="services-hero-overlay"></div>
+    <div class="services-hero-grid-pattern"></div>
+    <div class="services-hero-glow"></div>
+  </div>
+
+  <div class="container services-hero-container">
+    <div class="services-hero-content">
+      <!-- Top Meta Stack -->
+      <div class="hero-top-meta">
+        <!-- 1. Breadcrumb Navigation -->
+        <nav class="breadcrumb-nav" aria-label="مسار التنقل">
+          <a routerLink="/" class="breadcrumb-link">
+            <i class="fa-solid fa-house"></i>
+            <span>الرئيسية</span>
+          </a>
+          <i class="fa-solid fa-chevron-left breadcrumb-separator"></i>
+          <span class="breadcrumb-current">خدماتنا</span>
+        </nav>
+
+        <!-- 2. Trust Badge -->
+        <div class="services-badge">
+          <span class="badge-dot"></span>
+          <span>خدمات متكاملة في بناء المسابح والعوازل • مطابقة لكود البناء السعودي</span>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="services-hero-title">
+        خدمات متكاملة وشاملة تحت سقف واحد <br>
+        <span class="services-title-gradient">من التأسيس الإنشائي وحتى اكتمال التسليم</span>
+      </h1>
+
+      <!-- Refined Subtitle -->
+      <p class="services-hero-subtitle">
+        نجمع في شركة الراشد بين دقة تنفيذ المقاولات العامة وأعمال العظم، وبناء وتجهيز المسابح، وتنفيذ أعمال العزل المائي والحراري، وفق اشتراطات كود البناء السعودي.
+      </p>
+
+      <!-- Quick Category Navigation Anchor Bar -->
+      <div class="quick-nav-bar" aria-label="التنقل السريع بين القطاعات">
+        @for (item of quickNav; track item.id) {
+          <a [href]="'#' + item.id" class="quick-nav-pill">
+            <span class="pill-count">{{ item.count }}</span>
+            <i class="fa-solid" [ngClass]="item.icon"></i>
+            <span class="pill-label">{{ item.label }}</span>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 1 — POOL TYPES (أنواع وتصاميم المسابح)
+     ========================================================================== -->
+<section id="pools" class="section-padding pools-sector">
+  <div class="container">
+    <div class="section-head text-center">
+      <div class="section-badge ocean">
+        <i class="fa-solid fa-person-swimming"></i>
+        <span>أنظمة وتصاميم المسابح الحديثة</span>
+      </div>
+      <h2 class="section-title">
+        أنظمة وتصاميم المسابح: كيف تختار الطراز الأنسب لمنشأتك؟
+      </h2>
+      <p class="section-lead-text">
+        تتنوع أنظمة المسابح بحسب طريقة تدوير المياه وتصميم المكان المطلوب؛ نستعرض معك الأنظمة الثلاثة الأكثر طلباً في المملكة بمواصفاتها ومميزاتها:
+      </p>
+    </div>
+
+    <!-- Pool Types 3-Column Luxury Architecture Cards -->
+    <div class="pool-types-grid">
+      @for (pool of poolTypes; track pool.id) {
+        <article class="pool-type-card" [ngClass]="'theme-' + pool.theme">
+          <!-- Card Image Header -->
+          <div class="pool-card-media">
+            <img [src]="pool.image" 
+                 [alt]="pool.imageAlt" 
+                 class="pool-card-img" 
+                 loading="lazy" 
+                 width="600" 
+                 height="380">
+            <div class="pool-media-overlay"></div>
+            <span class="pool-badge floating">{{ pool.badge }}</span>
+            <div class="pool-icon-wrap floating">
+              <i class="fa-solid" [ngClass]="pool.icon"></i>
+            </div>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="pool-card-body">
+            <div class="pool-title-group">
+              <h3 class="pool-title">{{ pool.title }}</h3>
+              <span class="pool-title-en">{{ pool.titleEn }}</span>
+            </div>
+
+            <p class="pool-desc">{{ pool.description }}</p>
+
+            <!-- Quick Highlights Checklist -->
+            <ul class="pool-quick-features">
+              @for (feat of pool.features; track feat) {
+                <li>
+                  <i class="fa-solid fa-circle-check"></i>
+                  <span>{{ feat }}</span>
+                </li>
+              }
+            </ul>
+
+            <!-- Action Button -->
+            <div class="pool-card-action">
+              <a routerLink="/contact" 
+                 class="pool-cta-btn">
+                <i class="fa-solid fa-file-signature"></i>
+                <span>طلب معاينة وعرض سعر</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 4 — POOL EQUIPMENT & SYSTEMS (المعدات والتجهيزات الذكية)
+     ========================================================================== -->
+<section id="equipment" class="section-padding equipment-section">
+  <div class="container">
+    <div class="section-head text-center">
+      <div class="section-badge ocean">
+        <i class="fa-solid fa-screwdriver-wrench"></i>
+        <span>معدات وأنظمة التشغيل المتطورة</span>
+      </div>
+      <h2 class="section-title">
+        تجهيزات ومعدات المسابح المتطورة
+      </h2>
+      <p class="section-lead-text">
+        لا نكتفي بصب الخرسانة وعزلها؛ بل نجهز مسبحك بأحدث أنظمة الفلترة والتسخين والإنارة الذكية من أجود العلامات المتخصصة:
+      </p>
+    </div>
+
+    <div class="equipment-grid">
+      @for (eq of poolEquipment; track eq.title) {
+        <article class="equipment-card" [ngClass]="'theme-' + eq.theme">
+          <div class="equipment-top-line"></div>
+
+          <!-- Top Row: Icon + Badge -->
+          <div class="eq-card-top">
+            <div class="eq-icon-wrap">
+              <i class="fa-solid" [ngClass]="eq.icon"></i>
+            </div>
+            <span class="eq-badge">{{ eq.badge }}</span>
+          </div>
+
+          <!-- Main Content -->
+          <div class="eq-content">
+            <div class="eq-header">
+              <h3 class="eq-title">{{ eq.title }}</h3>
+              <span class="eq-subtitle">{{ eq.subtitle }}</span>
+            </div>
+
+            <p class="eq-desc">{{ eq.description }}</p>
+
+            <div class="eq-specs-box">
+              <h4 class="eq-specs-heading">أبرز المواصفات والمزايا الفنية:</h4>
+              <ul class="eq-specs">
+                @for (spec of eq.specs; track spec) {
+                  <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>{{ spec }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 5 — SUPPORTING PILLARS: INSULATION & GENERAL CONTRACTING
+     ========================================================================== -->
+<section id="insulation" class="section-padding insulation-sector">
+  <div class="insulation-grid-pattern"></div>
+  <div class="container insulation-container">
+    <!-- Section Head -->
+    <div class="section-head text-center light-head">
+      <div class="section-badge cyan">
+        <i class="fa-solid fa-shield-halved"></i>
+        <span>الركيزة الإنشائية وأعمال العزل المائي</span>
+      </div>
+      <h2 class="section-title text-white">
+        العوازل المائية والحرارية والمقاولات العامة
+      </h2>
+      <p class="section-lead-text text-slate-200">
+        سر استدامة أي مسبح يبدأ من جودة العزل المائي وقوة الهيكل الخرساني؛ نضمن حماية منشأتك من التسريب بنسبة 100% مع تنفيذ كافة المقاولات المصاحبة.
+      </p>
+    </div>
+
+    <!-- 3 Core Insulation Domains -->
+    <div class="insulation-cards-grid">
+      @for (item of insulationDomains; track item.id) {
+        <article class="insulation-card" [ngClass]="'theme-' + item.theme">
+          <div class="insulation-card-media">
+            <img [src]="item.image" 
+                 [alt]="item.imageAlt" 
+                 class="insulation-img" 
+                 loading="lazy" 
+                 width="600" 
+                 height="360">
+            <div class="insulation-overlay"></div>
+            <span class="insulation-badge-floating">{{ item.badge }}</span>
+          </div>
+
+          <div class="insulation-card-body">
+            <div class="insulation-card-header">
+              <h3 class="insulation-card-title">{{ item.title }}</h3>
+              <p class="insulation-card-desc">{{ item.description }}</p>
+            </div>
+
+            <div class="insulation-tech-box">
+              <h4 class="tech-box-title">المواد والمواصفات المتبعة:</h4>
+              <ul class="insulation-tech-list">
+                @for (tech of item.technologies; track tech) {
+                  <li>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>{{ tech }}</span>
+                  </li>
+                }
+              </ul>
+            </div>
+
+            <div class="insulation-card-footer">
+              <div class="warranty-pill">
+                <i class="fa-solid fa-certificate"></i>
+                <span>{{ item.warrantyYears }}</span>
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+
+    <!-- 72-Hour Flood Testing Protocol Banner -->
+    <div class="flood-test-protocol-card">
+      <div class="protocol-icon-col">
+        <div class="protocol-icon-glow">
+          <i class="fa-solid fa-vial-circle-check"></i>
+        </div>
+      </div>
+      <div class="protocol-info-col">
+        <div class="protocol-badge">
+          <span class="pulse-beacon"></span>
+          <span>بروتوكول ضبط الجودة الإلزامي</span>
+        </div>
+        <h3 class="protocol-title">اختبار الغمر المائي لمدة 72 ساعة متواصلة قبل التسليم</h3>
+        <p class="protocol-text">
+          لا نكتفي بتطبيق طبقات العزل؛ بل نخضع كل مسبح وخزان لاختبار غمر بالماء الصافي لمدة 72 ساعة متتالية لمراقبة المناسيب بمقاييس دقيقة موثقة بالتقارير لضمان العزل التام 100% قبل مرحلة البورسلان والموزاييك.
+        </p>
+      </div>
+      <div class="protocol-action-col">
+        <a routerLink="/contact" 
+           class="protocol-btn">
+          <i class="fa-solid fa-file-signature"></i>
+          <span>طلب معاينة وفحص الموقع</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 6 — LIVE FIELD PROJECTS GALLERY (معرض الأعمال الميدانية)
+     ========================================================================== -->
+<section id="gallery" class="section-padding services-gallery-section">
+  <div class="container">
+    <div class="section-head text-center">
+      <div class="section-badge ocean">
+        <i class="fa-solid fa-camera-retro"></i>
+        <span>توثيق ميداني حي من مواقع العمل</span>
+      </div>
+      <h2 class="section-title">
+        معرض مشاريع المسابح والأعمال الميدانية في الأحساء والمبرز
+      </h2>
+      <p class="section-lead-text">
+        لقطات حية موثقة من واقع مشاريعنا المنفذة تجسد جودة تنفيذ المسابح ودقة العوازل والإنشاءات:
+      </p>
+
+      <!-- Category Filter Tabs -->
+      <div class="gallery-filter-tabs" role="tablist">
+        <button class="filter-tab-btn" 
+                [class.active]="activeCategory === 'all'" 
+                (click)="setCategory('all')"
+                type="button">
+          <i class="fa-solid fa-border-all"></i>
+          <span>كافة المشاريع</span>
+          <span class="filter-count">8</span>
+        </button>
+        <button class="filter-tab-btn" 
+                [class.active]="activeCategory === 'pools'" 
+                (click)="setCategory('pools')"
+                type="button">
+          <i class="fa-solid fa-person-swimming"></i>
+          <span>قطاع المسابح</span>
+          <span class="filter-count">3</span>
+        </button>
+        <button class="filter-tab-btn" 
+                [class.active]="activeCategory === 'insulation'" 
+                (click)="setCategory('insulation')"
+                type="button">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>قطاع العوازل</span>
+          <span class="filter-count">1</span>
+        </button>
+        <button class="filter-tab-btn" 
+                [class.active]="activeCategory === 'contracting'" 
+                (click)="setCategory('contracting')"
+                type="button">
+          <i class="fa-solid fa-trowel-bricks"></i>
+          <span>المقاولات والإنشاءات</span>
+          <span class="filter-count">4</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Gallery Grid -->
+    <div class="services-gallery-grid">
+      @for (item of filteredGallery; track item.id) {
+        <article class="gallery-item-card" (click)="openModal(item)">
+          <div class="gallery-card-media">
+            <img [src]="item.image" 
+                 [alt]="item.imageAlt" 
+                 class="gallery-img" 
+                 loading="lazy" 
+                 width="600" 
+                 height="420">
+            <div class="gallery-media-overlay">
+              <div class="gallery-hover-icon" aria-hidden="true">
+                <i class="fa-solid fa-magnifying-glass-plus"></i>
+              </div>
+            </div>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox Modal for Full View -->
+@if (activeModalImage) {
+  <div class="gallery-modal-backdrop" (click)="closeModal()" role="dialog" aria-modal="true">
+    <div class="gallery-modal-dialog" (click)="$event.stopPropagation()">
+      <button class="gallery-modal-close" (click)="closeModal()" aria-label="إغلاق المعاينة" type="button">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="gallery-modal-img-wrap">
+        <img [src]="activeModalImage.image" 
+             [alt]="activeModalImage.imageAlt" 
+             class="gallery-modal-img">
+      </div>
+      <div class="gallery-modal-info">
+        <div class="modal-info-meta">
+          <span class="modal-category">{{ activeModalImage.categoryLabel }}</span>
+          <span class="modal-badge">{{ activeModalImage.badge }}</span>
+          <span class="modal-location">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>{{ activeModalImage.location }}</span>
+          </span>
+        </div>
+        <h3 class="modal-title">{{ activeModalImage.title }}</h3>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- ==========================================================================
+     SECTION 7 — POOL FAQS (الأسئلة الشائعة حول بناء وصيانة المسابح)
+     ========================================================================== -->
+<section id="faq" class="section-padding pool-faq-section">
+  <div class="container">
+    <div class="section-head text-center">
+      <div class="section-badge ocean">
+        <i class="fa-solid fa-circle-question"></i>
+        <span>الأسئلة الشائعة حول بناء وصيانة المسابح</span>
+      </div>
+      <h2 class="section-title">
+        الأسئلة الأكثر شيوعاً حول بناء وتجهيز وتكاليف المسابح
+      </h2>
+      <p class="section-lead-text">
+        جمعنا لك أهم التساؤلات التي يطرحها عملاؤنا قبل بدء مشروع المسبح، بإجابات مباشرة وواضحة:
+      </p>
+    </div>
+
+    <div class="faq-accordion-wrap">
+      @for (faq of poolFaqs; track faq.question; let i = $index) {
+        <div class="faq-item" [class.open]="activeFaqIndex === i">
+          <button class="faq-question-btn" 
+                  (click)="toggleFaq(i)" 
+                  type="button" 
+                  [attr.aria-expanded]="activeFaqIndex === i">
+            <div class="faq-q-text">
+              <i class="fa-solid" [ngClass]="faq.icon"></i>
+              <span>{{ faq.question }}</span>
+            </div>
+            <span class="faq-toggle-icon">
+              <i class="fa-solid fa-chevron-down"></i>
+            </span>
+          </button>
+          @if (activeFaqIndex === i) {
+            <div class="faq-answer-panel">
+              <p class="faq-answer-text">{{ faq.answer }}</p>
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 6 — DIRECT CONSULTATION CTA
+     ========================================================================== -->
+<section class="services-cta-section">
+  <div class="services-cta-bg">
+    <img src="/last-projects/Luxury-Overflow-Swimming-Pool.jpg" 
+         alt="مشاريع شركة الراشد للمسابح والعوازل والمقاولات العامة" 
+         class="services-cta-bg-img" 
+         loading="lazy" 
+         width="1920" 
+         height="800">
+    <div class="services-cta-overlay"></div>
+    <div class="services-cta-grid-pattern"></div>
+    <div class="services-cta-glow"></div>
+  </div>
+
+  <div class="container services-cta-container">
+    <div class="services-cta-content">
+      <!-- Luxury Badge -->
+      <div class="services-cta-badge">
+        <i class="fa-solid fa-award"></i>
+        <span>تنفيذ متقن وضمان شامل • كود البناء السعودي</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h2 class="services-cta-title">
+        جاهزون لتنفيذ مسبحك أو مشروعك
+        <span class="services-cta-highlight">بأعلى معايير الجودة والإتقان</span>
+      </h2>
+
+      <!-- Description -->
+      <p class="services-cta-text">
+        احصل على معاينة ميدانية لموقعك مع حساب دقيق للتكاليف وجداول كميات واضحة وفق اشتراطات كود البناء السعودي.
+      </p>
+
+      <!-- Action Button -->
+      <div class="services-cta-actions">
+        <a routerLink="/contact" 
+           class="cta-btn-luxury">
+          <span class="btn-icon-box">
+            <i class="fa-solid fa-file-signature"></i>
+          </span>
+          <span class="btn-text">اطلب عرض سعر لمشروعك الآن</span>
+          <i class="fa-solid fa-arrow-left btn-arrow"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

@@ -3,12 +3,9 @@
      ========================================================================== -->
 <section class="about-hero">
   <div class="about-hero-bg">
-    <img src="/last-projects/Aerial Foundation Construction Site.webp" 
-         alt="مسيرة شركة الراشد للمسابح والعوازل والمقاولات العامة" 
-         class="about-hero-img" 
-         fetchpriority="high"
-         width="1920" 
-         height="750">
+    <img src="/last-projects/Aerial Foundation Construction Site.webp"
+      alt="مسيرة شركة الراشد للمسابح والعوازل والمقاولات العامة" class="about-hero-img" fetchpriority="high"
+      width="1920" height="750">
     <div class="about-hero-overlay"></div>
     <div class="about-hero-grid-pattern"></div>
     <div class="about-hero-glow"></div>
@@ -16,32 +13,47 @@
 
   <div class="container about-hero-container">
     <div class="about-hero-content">
-      <!-- Breadcrumb Navigation -->
-      <nav class="breadcrumb-nav" aria-label="مسار التنقل">
-        <a routerLink="/" class="breadcrumb-link">
-          <i class="fa-solid fa-house"></i>
-          <span>الرئيسية</span>
-        </a>
-        <i class="fa-solid fa-chevron-left breadcrumb-separator"></i>
-        <span class="breadcrumb-current">من نحن</span>
-      </nav>
+      <!-- Top Meta Stack -->
+      <div class="hero-top-meta">
+        <!-- 1. Breadcrumb Navigation -->
+        <nav class="breadcrumb-nav" aria-label="مسار التنقل">
+          <a routerLink="/" class="breadcrumb-link">
+            <i class="fa-solid fa-house"></i>
+            <span>الرئيسية</span>
+          </a>
+          <i class="fa-solid fa-chevron-left breadcrumb-separator"></i>
+          <span class="breadcrumb-current">من نحن</span>
+        </nav>
 
-      <!-- Luxury Trust Badge -->
-      <div class="about-badge">
-        <span class="badge-dot"></span>
-        <span>ريادة هندسية موثقة • خبرة تفوق 13 عاماً في المملكة</span>
+        <!-- 2. Luxury Trust Badge -->
+        <div class="about-badge">
+          <span class="badge-dot"></span>
+          <span>خبرة تفوق 15 عاماً في التنفيذ والمقاولات بالمملكة</span>
+        </div>
       </div>
 
       <!-- Main Headline -->
       <h1 class="about-hero-title">
-        عراقة هندسية تُبنى عليها الثقة <br>
-        <span class="about-title-gradient">وجودة معمارية تترجم إلى واقع</span>
+        خبرة موثوقة تُبنى عليها الثقة <br>
+        <span class="about-title-gradient">وجودة حقيقية تترجم إلى واقع</span>
       </h1>
 
       <!-- Refined Subtitle -->
       <p class="about-hero-subtitle">
-        شركة سعودية متخصصة ومصنفة في قطاع المقاولات العامة، بناء وتجهيز المسابح الفاخرة، وأنظمة العزل المتقدمة. نكرس خبراتنا المتراكمة لتنفيذ مشاريع إنشائية تجمع بين الفخامة المعمارية وأعلى معايير كود البناء السعودي.
+        شركة سعودية متخصصة ومصنفة في قطاع المقاولات العامة، بناء وتجهيز المسابح، وأنظمة العزل المائي والحراري. نكرس
+        خبراتنا لتنفيذ مشاريع تجمع بين المتانة والإتقان وأعلى معايير كود البناء السعودي.
       </p>
+
+      <!-- Quick Category Navigation Anchor Bar -->
+      <div class="quick-nav-bar" aria-label="التنقل السريع بين الأقسام">
+        @for (item of quickNav; track item.id) {
+        <a [href]="'#' + item.id" class="quick-nav-pill">
+          <span class="pill-count">{{ item.count }}</span>
+          <i class="fa-solid" [ngClass]="item.icon"></i>
+          <span class="pill-label">{{ item.label }}</span>
+        </a>
+        }
+      </div>
     </div>
   </div>
 </section>
@@ -49,7 +61,7 @@
 <!-- ==========================================================================
      SECTION 2 — COMPANY STORY & IDENTITY (هويتنا ومسيرتنا)
      ========================================================================== -->
-<section class="section-padding story-section">
+<section id="story" class="section-padding story-section">
   <div class="container">
     <div class="story-grid">
       <!-- Text Side -->
@@ -59,7 +71,7 @@
         </div>
 
         <h2 class="section-title">
-          أكثر من 13 عاماً من التميز في قطاع المقاولات وبناء المسابح والعوازل
+          أكثر من 15 عاماً من التميز في قطاع المقاولات وبناء المسابح والعوازل
         </h2>
 
         <div class="story-quote-card">
@@ -68,21 +80,27 @@
             <p class="story-quote">
               "{{ company.tagline }}"
             </p>
-            <span class="quote-author">— ميثاق الجودة الهندسية في شركة الراشد</span>
+            <span class="quote-author">— معيار الجودة والإتقان في شركة الراشد</span>
           </div>
         </div>
 
         <div class="story-body-paragraphs">
           <p>
-            انطلقت <strong>شركة الراشد للمسابح والعوازل والمقاولات العامة</strong> من قلب المنطقة الشرقية بالمملكة العربية السعودية (الأحساء - المبرز)، برؤية طموحة تواكب مسيرة التنمية العمرانية الشاملة التي تشهدها المملكة وفق مستهدفات <strong>رؤية السعودية 2030</strong>.
+            انطلقت <strong>شركة الراشد للمسابح والعوازل والمقاولات العامة</strong> من قلب المنطقة الشرقية بالمملكة
+            العربية السعودية (الأحساء - المبرز)، برؤية طموحة تواكب مسيرة التنمية العمرانية الشاملة التي تشهدها المملكة
+            وفق مستهدفات <strong>رؤية السعودية 2030</strong>.
           </p>
 
           <p>
-            على مدار أكثر من عقد من الزمان، نجحنا في بناء رصيد استثنائي من المشاريع المنجزة بنجاح؛ بدءاً من الفلل والقصور السكنية الفاخرة، مروراً بالمباني التجارية والمستودعات، وصولاً إلى المنشآت المتخصصة، مع التزام صارم بأعلى اشتراطات <strong>كود البناء السعودي</strong> لضمان الأمان الإنشائي والمتانة المستدامة.
+            على مدار أكثر من عقد من الزمان، نجحنا في بناء رصيد طيب من المشاريع المنجزة؛ بدءاً من الفلل والمباني السكنية،
+            مروراً بالمستودعات والمباني التجارية، مع التزام بأعلى اشتراطات <strong>كود البناء السعودي</strong> لضمان
+            الأمان الإنشائي والمتانة المستدامة.
           </p>
 
           <p>
-            ما يميز شركة الراشد هو تقديم <strong>حلول هندسية شاملة ومتكاملة تحت سقف واحد</strong>؛ نجمع بين دقة تنفيذ الهياكل الخرسانية وأعمال العظم، فخامة التشطيبات المعمارية، ريادة تصميم وبناء أرقى أنواع المسابح، وتطبيق أحدث أنظمة العزل المائي والحراري المعتمدة، مع توفير خيارات تعاقد مرنة تناسب تطلعات كل عميل.
+            ما يميز شركة الراشد هو تقديم <strong>خدمات متكاملة تحت سقف واحد</strong>؛ نجمع بين تنفيذ أعمال العظم
+            والخرسانات، جودة التشطيبات، بناء وتجهيز المسابح، وأعمال العزل المائي والحراري، مع توفير خيارات تعاقد مرنة
+            (بالمواد أو بالمصنعية) تناسب كل عميل.
           </p>
         </div>
       </div>
@@ -92,24 +110,18 @@
         <div class="story-media-composition">
           <!-- Primary Image Card -->
           <div class="story-main-card">
-            <img src="/last-projects/Sunlit Foundation Formwork Construction Site.webp" 
-                 alt="تنفيذ الأساسات والنجارة المسلحة في مشاريع شركة الراشد" 
-                 loading="lazy" 
-                 width="640" 
-                 height="480"
-                 class="story-main-img">
+            <img src="/last-projects/Sunlit Foundation Formwork Construction Site.webp"
+              alt="تنفيذ الأساسات والنجارة المسلحة في مشاريع شركة الراشد" loading="lazy" width="640" height="480"
+              class="story-main-img">
             <div class="main-card-tag">أعمال الأساسات والنجارة المسلحة</div>
           </div>
 
           <!-- Secondary Image Card (Certified Waterproofing System) -->
           <div class="story-secondary-card">
-            <img src="/last-projects/Geometric Waterproofing in Progress.webp" 
-                 alt="تطبيق أحدث أنظمة العزل المائي للأساسات الإنشائية" 
-                 loading="lazy" 
-                 width="320" 
-                 height="220"
-                 class="story-secondary-img">
-            <div class="secondary-caption">تنفيذ أنظمة العزل المائي المعتمدة</div>
+            <img src="/last-projects/Geometric Waterproofing in Progress.webp"
+              alt="تطبيق أحدث أنظمة العزل المائي للأساسات الإنشائية" loading="lazy" width="320" height="220"
+              class="story-secondary-img">
+            <div class="secondary-caption">تنفيذ أعمال العزل المائي والحراري</div>
           </div>
 
           <!-- Floating Year Badge -->
@@ -118,7 +130,7 @@
               <i class="fa-solid fa-award"></i>
             </div>
             <div class="badge-text-wrap">
-              <strong>+13 عاماً</strong>
+              <strong>+15 عاماً</strong>
               <span>من الخبرة الميدانية بالأحساء والمملكة</span>
             </div>
           </div>
@@ -129,7 +141,7 @@
 </section>
 
 <!-- ==========================================================================
-     SECTION 3 — VISION & MISSION (الرؤية والرسالة الهندسية)
+     SECTION 3 — VISION & MISSION (الرؤية والرسالة)
      ========================================================================== -->
 <section class="section-padding vision-mission-section">
   <div class="vm-grid-pattern" aria-hidden="true"></div>
@@ -137,10 +149,10 @@
     <div class="section-head text-center">
       <div class="section-badge dark">
         <i class="fa-solid fa-compass"></i>
-        <span>بوصلتنا المستقبلية</span>
+        <span>أهدافنا وتوجهنا</span>
       </div>
       <h2 class="section-title light">
-        الرؤية والرسالة الهندسية
+        رؤيتنا ورسالتنا في العمل
       </h2>
     </div>
 
@@ -155,18 +167,19 @@
             <i class="fa-solid fa-compass"></i>
           </div>
           <div class="vm-title-wrap">
-            <span class="vm-pretitle">طموح مستقبلي راسخ</span>
-            <h3 class="vm-title">رؤيتنا الهندسية</h3>
+            <span class="vm-pretitle">طموح مستمر نحو الأفضل</span>
+            <h3 class="vm-title">رؤيتنا في العمل</h3>
           </div>
         </div>
 
         <p class="vm-text">
-          أن نكون الشريك الهندسي الأكثر موثوقية وتميزاً في قطاع المقاولات العامة والبناء والتشييد، وإنشاء وتجهيز المسابح الفاخرة، وحلول العزل المتقدمة في المملكة العربية السعودية، من خلال تقديم مشاريع تتفوق في الجودة والفخامة وتلتزم بأدق اشتراطات كود البناء السعودي.
+          أن نكون الخيار الموثوق في قطاع المقاولات العامة وبناء وتجهيز المسابح وحلول العزل، من خلال تنفيذ مشاريع متقنة
+          تلتزم باشتراطات كود البناء السعودي.
         </p>
 
         <div class="vm-footer-tag">
           <i class="fa-solid fa-arrow-trend-up"></i>
-          <span>الريادة والتميز المعماري المستدام</span>
+          <span>الجودة والاستدامة في التنفيذ</span>
         </div>
       </div>
 
@@ -186,7 +199,8 @@
         </div>
 
         <p class="vm-text">
-          تقديم خدمات مقاولات وإنشاءات شاملة تغطي أعمال العظم، التشطيبات الفاخرة، والأنظمة الكهروميكانيكية، وبناء المسابح والعوازل بأعلى درجات الدقة والاحترافية، وتوفير خيارات تعاقدية مرنة (بالمواد أو بدون مواد) مع الالتزام التام بالجداول الزمنية، بما يحقق تطلعات عملائنا ويضمن سلامة استثماراتهم.
+          تقديم خدمات مقاولات وإنشاءات تغطي أعمال العظم، التشطيبات، بناء المسابح، وأعمال العوازل باحترافية، وتوفير
+          خيارات تنفيذ مرنة (بالمواد أو بالمصنعية) مع الالتزام بالمواعيد المتفق عليها بما يحقق تطلعات عملائنا.
         </p>
 
         <div class="vm-footer-tag">
@@ -201,7 +215,7 @@
 <!-- ==========================================================================
      SECTION 4 — CORE VALUES (قيمنا الجوهرية)
      ========================================================================== -->
-<section class="section-padding values-section">
+<section id="values" class="section-padding values-section">
   <div class="container">
     <div class="section-head text-center">
       <div class="section-badge orange">
@@ -216,28 +230,28 @@
     <!-- 2x2 Executive Architectural Plaque Cards -->
     <div class="values-executive-grid">
       @for (val of coreValues; track val.title) {
-        <div class="value-plaque-card" [ngClass]="'theme-' + val.theme">
-          <div class="value-card-top-accent"></div>
-          <div class="value-card-watermark"><i class="fa-solid" [ngClass]="val.icon"></i></div>
-          
-          <div class="value-card-header">
-            <div class="value-icon-wrapper">
-              <i class="fa-solid" [ngClass]="val.icon"></i>
-            </div>
-            <div class="value-badge-pill">
-              <span class="badge-status-dot"></span>
-              <span>{{ val.badge }}</span>
-            </div>
+      <div class="value-plaque-card" [ngClass]="'theme-' + val.theme">
+        <div class="value-card-top-accent"></div>
+        <div class="value-card-watermark"><i class="fa-solid" [ngClass]="val.icon"></i></div>
+
+        <div class="value-card-header">
+          <div class="value-icon-wrapper">
+            <i class="fa-solid" [ngClass]="val.icon"></i>
           </div>
-
-          <h3 class="value-title">{{ val.title }}</h3>
-          <p class="value-desc">{{ val.description }}</p>
-
-          <div class="value-guarantee-ribbon">
-            <i class="fa-solid fa-circle-check"></i>
-            <span>{{ val.highlight }}</span>
+          <div class="value-badge-pill">
+            <span class="badge-status-dot"></span>
+            <span>{{ val.badge }}</span>
           </div>
         </div>
+
+        <h3 class="value-title">{{ val.title }}</h3>
+        <p class="value-desc">{{ val.description }}</p>
+
+        <div class="value-guarantee-ribbon">
+          <i class="fa-solid fa-circle-check"></i>
+          <span>{{ val.highlight }}</span>
+        </div>
+      </div>
       }
     </div>
   </div>
@@ -246,12 +260,12 @@
 <!-- ==========================================================================
      SECTION 5 — WORKFLOW & QUALITY METHODOLOGY (منهجية العمل وضبط الجودة)
      ========================================================================== -->
-<section class="section-padding workflow-section">
+<section id="workflow" class="section-padding workflow-section">
   <div class="container">
     <div class="section-head text-center">
       <div class="section-badge">
         <i class="fa-solid fa-diagram-project"></i>
-        <span>المسار الهندسي المعتمد</span>
+        <span>مراحل العمل المنظمة</span>
       </div>
       <h2 class="section-title">
         منهجية العمل من الفكرة وحتى التسليم
@@ -265,39 +279,39 @@
 
       <div class="workflow-pipeline-grid">
         @for (step of workflowSteps; track step.step) {
-          <div class="workflow-pipeline-step">
-            <!-- Milestone Step Node -->
-            <div class="pipeline-node-wrap">
-              <div class="milestone-badge">
-                <span class="milestone-num">{{ step.step }}</span>
-                <span class="milestone-glow"></span>
+        <div class="workflow-pipeline-step">
+          <!-- Milestone Step Node -->
+          <div class="pipeline-node-wrap">
+            <div class="milestone-badge">
+              <span class="milestone-num">{{ step.step }}</span>
+              <span class="milestone-glow"></span>
+            </div>
+            <span class="pipeline-phase-tag">{{ step.phase }}</span>
+          </div>
+
+          <!-- Technical Card Body -->
+          <div class="pipeline-card">
+            <div class="pipeline-card-head">
+              <div class="pipeline-icon-box">
+                <i class="fa-solid" [ngClass]="step.icon"></i>
               </div>
-              <span class="pipeline-phase-tag">{{ step.phase }}</span>
+              <h3 class="pipeline-step-title">{{ step.title }}</h3>
             </div>
 
-            <!-- Technical Card Body -->
-            <div class="pipeline-card">
-              <div class="pipeline-card-head">
-                <div class="pipeline-icon-box">
-                  <i class="fa-solid" [ngClass]="step.icon"></i>
-                </div>
-                <h3 class="pipeline-step-title">{{ step.title }}</h3>
+            <p class="pipeline-step-desc">{{ step.description }}</p>
+
+            <!-- Stage Deliverable Box -->
+            <div class="pipeline-deliverable">
+              <div class="deliverable-header">
+                <i class="fa-solid fa-stamp"></i>
+                <span>مخرجات المرحلة:</span>
               </div>
-
-              <p class="pipeline-step-desc">{{ step.description }}</p>
-
-              <!-- Stage Deliverable Box -->
-              <div class="pipeline-deliverable">
-                <div class="deliverable-header">
-                  <i class="fa-solid fa-stamp"></i>
-                  <span>المخرج الهندسي للمرحلة:</span>
-                </div>
-                <div class="deliverable-content">
-                  {{ step.deliverable }}
-                </div>
+              <div class="deliverable-content">
+                {{ step.deliverable }}
               </div>
             </div>
           </div>
+        </div>
         }
       </div>
     </div>
@@ -309,12 +323,9 @@
      ========================================================================== -->
 <section class="about-cta-section">
   <div class="about-cta-bg">
-    <img src="/last-projects/Expansive Concrete Foundation Construction Site.webp" 
-         alt="مشاريع شركة الراشد للمسابح والعوازل والمقاولات العامة" 
-         class="about-cta-img" 
-         loading="lazy" 
-         width="1920" 
-         height="800">
+    <img src="/last-projects/Expansive Concrete Foundation Construction Site.webp"
+      alt="مشاريع شركة الراشد للمسابح والعوازل والمقاولات العامة" class="about-cta-img" loading="lazy" width="1920"
+      height="800">
     <div class="about-cta-overlay"></div>
     <div class="about-cta-grid-pattern"></div>
     <div class="about-cta-glow"></div>
@@ -325,30 +336,27 @@
       <!-- Luxury Badge -->
       <div class="about-cta-badge">
         <i class="fa-solid fa-award"></i>
-        <span>ريادة هندسية موثقة • كود البناء السعودي</span>
+        <span>تنفيذ دقيق وضمان شامل • كود البناء السعودي</span>
       </div>
 
       <!-- Main Headline -->
       <h2 class="about-cta-title">
         جاهزون لتنفيذ مسبحك أو مشروعك
-        <span class="about-cta-highlight">بأعلى دقة وفخامة هندسية</span>
+        <span class="about-cta-highlight">بأعلى معايير الجودة والإتقان</span>
       </h2>
 
       <!-- Description -->
       <p class="about-cta-text">
-        احصل على استشارة فنية ومعاينة ميدانية لموقعك مع دراسة مقايسة معتمدة وفق اشتراطات كود البناء السعودي.
+        احصل على معاينة ميدانية لموقعك مع حساب دقيق للتكاليف وفق اشتراطات كود البناء السعودي.
       </p>
 
       <!-- Action Button -->
       <div class="about-cta-actions">
-        <a [href]="company.whatsappQuoteUrl" 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="cta-btn-luxury">
+        <a routerLink="/contact" class="cta-btn-luxury">
           <span class="btn-icon-box">
-            <i class="fa-brands fa-whatsapp fa-lg"></i>
+            <i class="fa-solid fa-file-signature"></i>
           </span>
-          <span class="btn-text">اطلب دراسة فنية لمشروعك الآن</span>
+          <span class="btn-text">اطلب عرض سعر لمشروعك الآن</span>
           <i class="fa-solid fa-arrow-left btn-arrow"></i>
         </a>
       </div>

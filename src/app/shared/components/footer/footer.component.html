@@ -16,7 +16,7 @@
           </div>
         </a>
         <p class="brand-bio">
-          ريادة هندسية في تصميم وبناء المسابح الفاخرة، أنظمة العزل المائي والحراري المعتمدة، وأعمال المقاولات العامة وفق كود البناء السعودي.
+          متخصصون في بناء وتجهيز المسابح، أعمال العزل المائي والحراري، والمقاولات العامة وفق اشتراطات كود البناء السعودي.
         </p>
 
         <div class="brand-tagline-badge">
@@ -42,7 +42,7 @@
 
       <!-- Col 3: Services -->
       <div class="footer-col">
-        <h3 class="footer-col-title">خدماتنا المعتمدة</h3>
+        <h3 class="footer-col-title">خدماتنا الرئيسية</h3>
         <ul class="footer-links-list">
           @for (srv of servicesList; track srv.name) {
             <li>
@@ -65,7 +65,12 @@
             </div>
             <div class="contact-text">
               <span class="contact-label">المقر الرئيسي:</span>
-              <span class="contact-val">{{ company.location.fullAddress }}</span>
+              <a [href]="company.location.googleMapsUrl" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="contact-val location-link">
+                {{ company.location.fullAddress }}
+              </a>
             </div>
           </li>
 

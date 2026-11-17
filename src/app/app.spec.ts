@@ -1,23 +1,38 @@
-import { TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideRouter } from '@angular/router';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
 import { App } from './app';
 
-describe('App', () => {
+describe('App Component', () => {
+  let fixture: ComponentFixture<App>;
+  let app: App;
+
   beforeEach(async () => {
+    sessionStorage.clear();
+
     await TestBed.configureTestingModule({
       imports: [App],
+      providers: [provideRouter([])]
     }).compileComponents();
   });
 
+  afterEach(() => {
+    sessionStorage.clear();
+  });
+
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
+    fixture = TestBed.createComponent(App);
+    app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
-  it('should render title', async () => {
-    const fixture = TestBed.createComponent(App);
-    await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, project');
+  it('should complete intro and hide when onIntroCompleted is called', () => {
+    fixture = TestBed.createComponent(App);
+    app = fixture.componentInstance;
+    app.isIntroActive.set(true);
+
+    app.onIntroCompleted();
+
+    expect(app.isIntroActive()).toBe(false);
   });
 });

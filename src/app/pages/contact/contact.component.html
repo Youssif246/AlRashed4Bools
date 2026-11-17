@@ -1,0 +1,497 @@
+<!-- ==========================================================================
+     PAGE HERO — CONTACT US (LUXURY ARCHITECTURAL CORPORATE)
+     ========================================================================== -->
+<section class="contact-hero">
+  <div class="contact-hero-bg">
+    <img src="/last-projects/Luxury-Overflow-Swimming-Pool.jpg" 
+         alt="تواصل مع شركة الراشد للمسابح والعوازل والمقاولات العامة بالأحساء" 
+         class="contact-hero-img" 
+         fetchpriority="high"
+         width="1920" 
+         height="750">
+    <div class="contact-hero-overlay"></div>
+    <div class="contact-hero-grid-pattern"></div>
+    <div class="contact-hero-glow"></div>
+  </div>
+
+  <div class="container contact-hero-container">
+    <div class="contact-hero-content">
+      <!-- Top Meta Stack -->
+      <div class="hero-top-meta">
+        <!-- 1. Breadcrumb Navigation -->
+        <nav class="breadcrumb-nav" aria-label="مسار التنقل">
+          <a routerLink="/" class="breadcrumb-link">
+            <i class="fa-solid fa-house"></i>
+            <span>الرئيسية</span>
+          </a>
+          <i class="fa-solid fa-chevron-left breadcrumb-separator"></i>
+          <span class="breadcrumb-current">تواصل معنا</span>
+        </nav>
+
+        <!-- 2. Trust Badge -->
+        <div class="contact-badge">
+          <span class="badge-dot"></span>
+          <span>معاينات ميدانية ومتابعة سريعة • تواصل مباشر</span>
+        </div>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="contact-hero-title">
+        <span class="contact-title-line">تواصل مع شركة الراشد للمسابح والمقاولات</span>
+        <span class="contact-title-line contact-title-gradient">خطوتك الأولى نحو تنفيذ مسبحك ومشروعك</span>
+      </h1>
+
+      <!-- Refined Subtitle -->
+      <p class="contact-hero-subtitle">
+        يسعدنا في شركة الراشد استقبال استفساراتكم وتقديم المعاينة الميدانية لبناء وتجهيز المسابح، تنفيذ أعمال العزل المائي والحراري، وأعمال المقاولات العامة في الأحساء والمنطقة الشرقية.
+      </p>
+
+      <!-- Quick Category Navigation Anchor Bar -->
+      <div class="quick-nav-bar" aria-label="التنقل السريع بين الأقسام">
+        @for (item of quickNav; track item.id) {
+          <a [href]="'#' + item.id" class="quick-nav-pill">
+            <span class="pill-count">{{ item.count }}</span>
+            <i class="fa-solid" [ngClass]="item.icon"></i>
+            <span class="pill-label">{{ item.label }}</span>
+          </a>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 1 — DIRECT CONTACT CHANNELS (قنوات التواصل المباشرة السريعة)
+     ========================================================================== -->
+<section id="channels" class="section-padding channels-section">
+  <div class="channels-ambient-glow" aria-hidden="true"></div>
+  <div class="container channels-container">
+    <div class="channels-grid">
+      @for (channel of contactChannels; track channel.id) {
+        <article class="channel-card" [ngClass]="'theme-' + channel.theme">
+          <div class="channel-accent-bar"></div>
+          
+          <div class="channel-card-top">
+            <div class="channel-icon-wrap">
+              <i [class]="channel.id === 'whatsapp' ? 'fa-brands fa-whatsapp' : 'fa-solid ' + channel.icon"></i>
+            </div>
+            <div class="channel-badge">
+              <span class="badge-beacon"></span>
+              <span>{{ channel.badge }}</span>
+            </div>
+          </div>
+
+          <div class="channel-content">
+            <h3 class="channel-title">{{ channel.title }}</h3>
+            <span class="channel-subtitle">{{ channel.subtitle }}</span>
+            
+            <div class="channel-value-card">
+              <span class="channel-value-label">
+                @if (channel.id === 'phone') {
+                  رقم الاتصال المباشر
+                } @else if (channel.id === 'whatsapp') {
+                  رقم الواتساب المباشر
+                } @else {
+                  عنوان المقر الميداني
+                }
+              </span>
+              <div class="channel-value-text" [dir]="channel.id === 'phone' || channel.id === 'whatsapp' ? 'ltr' : 'rtl'">
+                {{ channel.value }}
+              </div>
+            </div>
+          </div>
+
+          <div class="channel-action">
+            @if (channel.isExternal) {
+              <a [href]="channel.actionUrl" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 class="channel-btn">
+                <span class="btn-icon-box">
+                  <i [class]="channel.id === 'whatsapp' ? 'fa-brands fa-whatsapp' : 'fa-solid ' + channel.icon"></i>
+                </span>
+                <span class="btn-text">{{ channel.actionText }}</span>
+                <i class="fa-solid fa-arrow-left btn-arrow"></i>
+              </a>
+            } @else {
+              <a [href]="channel.actionUrl" class="channel-btn">
+                <span class="btn-icon-box">
+                  <i [class]="channel.id === 'whatsapp' ? 'fa-brands fa-whatsapp' : 'fa-solid ' + channel.icon"></i>
+                </span>
+                <span class="btn-text">{{ channel.actionText }}</span>
+                <i class="fa-solid fa-arrow-left btn-arrow"></i>
+              </a>
+            }
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 2 — INTERACTIVE REQUEST FORM & OFFICE LOCATION (النموذج والمقر)
+     ========================================================================== -->
+<section id="consultation" class="section-padding split-contact-section">
+  <div class="split-ambient-glow" aria-hidden="true"></div>
+  <div class="container">
+    <div class="contact-split-grid">
+      
+      <!-- Right Column: Interactive Consultation & Quote Form -->
+      <div class="form-wrapper-side">
+        <div class="form-card">
+          <div class="form-top-accent"></div>
+
+          <div class="form-card-header">
+            <div class="form-badge">
+              <span class="pulse-dot"></span>
+              <i class="fa-solid fa-file-signature"></i>
+              <span>طلب معاينة وعرض سعر للمشروع</span>
+            </div>
+            <h2 class="form-main-title">
+              احجز موعد معاينة ميدانية أو اطلب عرض سعر لمشروعك
+            </h2>
+            <p class="form-lead-desc">
+              سجل بيانات مشروعك أدناه وسنتواصل معك مباشرة لتحديد موعد المعاينة أو إعداد عرض السعر وجدول الكميات:
+            </p>
+          </div>
+
+          @if (isSubmitted()) {
+            <div class="form-success-banner" role="alert">
+              <div class="success-icon-box">
+                <i class="fa-solid fa-circle-check"></i>
+              </div>
+              <div class="success-text-box">
+                <h4 class="success-title">تم استلام طلبك بنجاح!</h4>
+                <p class="success-desc">{{ submitSuccessMsg() }}</p>
+                <div class="success-actions">
+                  <a [href]="company.whatsappUrl" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <span>متابعة المحادثة في واتساب</span>
+                  </a>
+                  <button type="button" class="btn btn-outline" (click)="resetForm()">
+                    <i class="fa-solid fa-rotate-right"></i>
+                    <span>إرسال طلب آخر</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          } @else {
+            <form (submit)="submitConsultation($event)" class="consultation-form">
+              <div class="form-grid-2col">
+                <!-- Field 1: Full Name -->
+                <div class="form-group">
+                  <label for="fullName" class="form-label">
+                    <span>الاسم الكريم</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-user input-icon"></i>
+                    <input type="text" 
+                           id="fullName" 
+                           name="fullName"
+                           [ngModel]="fullName()" 
+                           (ngModelChange)="fullName.set($event)"
+                           required 
+                           placeholder="مثال: أحمد الراشد" 
+                           class="form-control">
+                  </div>
+                </div>
+
+                <!-- Field 2: Phone Number -->
+                <div class="form-group">
+                  <label for="phone" class="form-label">
+                    <span>رقم الجوال</span>
+                    <span class="required-star">*</span>
+                  </label>
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-phone input-icon"></i>
+                    <input type="tel" 
+                           id="phone" 
+                           name="phone"
+                           [ngModel]="phone()" 
+                           (ngModelChange)="phone.set($event)"
+                           required 
+                           dir="ltr"
+                           placeholder="050 000 0000" 
+                           class="form-control">
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-grid-2col">
+                <!-- Field 3: City / Neighborhood -->
+                <div class="form-group">
+                  <label for="city" class="form-label">
+                    <span>المدينة / الحي</span>
+                  </label>
+                  <div class="input-wrap">
+                    <i class="fa-solid fa-location-dot input-icon"></i>
+                    <input type="text" 
+                           id="city" 
+                           name="city"
+                           [ngModel]="city()" 
+                           (ngModelChange)="city.set($event)"
+                           placeholder="مثال: الأحساء - المبرز" 
+                           class="form-control">
+                  </div>
+                </div>
+
+                <!-- Field 4: Service Category -->
+                <div class="form-group">
+                  <label for="serviceCategory" class="form-label">
+                    <span>نوع الخدمة المطلوبة</span>
+                  </label>
+                  <div class="select-wrap">
+                    <i class="fa-solid fa-layer-group select-icon"></i>
+                    <select id="serviceCategory" 
+                            name="serviceCategory"
+                            [ngModel]="serviceCategory()" 
+                            (ngModelChange)="serviceCategory.set($event)"
+                            class="form-control form-select">
+                      @for (srv of serviceOptions; track srv) {
+                        <option [value]="srv">{{ srv }}</option>
+                      }
+                    </select>
+                    <i class="fa-solid fa-chevron-down select-arrow"></i>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Field 5: Contracting Mode -->
+              <div class="form-group">
+                <label class="form-label">
+                  <span>أسلوب التعاقد والتنفيذ المفضل</span>
+                </label>
+                <div class="radio-cards-grid">
+                  @for (mode of contractModes; track mode) {
+                    <label class="radio-card-item" [class.selected]="contractMode() === mode">
+                      <input type="radio" 
+                             name="contractMode" 
+                             [value]="mode" 
+                             [ngModel]="contractMode()" 
+                             (ngModelChange)="contractMode.set($event)">
+                      <div class="radio-indicator">
+                        <i class="fa-solid fa-circle-check"></i>
+                      </div>
+                      <span class="radio-card-title">{{ mode }}</span>
+                    </label>
+                  }
+                </div>
+              </div>
+
+              <!-- Field 6: Project Details -->
+              <div class="form-group">
+                <label for="projectDetails" class="form-label">
+                  <span>تفاصيل المشروع أو متطلبات خاصة (اختياري)</span>
+                </label>
+                <div class="textarea-wrap">
+                  <textarea id="projectDetails" 
+                            name="projectDetails"
+                            [ngModel]="projectDetails()" 
+                            (ngModelChange)="projectDetails.set($event)"
+                            rows="3" 
+                            placeholder="اذكر المساحة التقريبية للمسبح، طبيعة العزل المطلوب، أو أي تفاصيل تسهم في سرعة إعداد عرض السعر وتحديد التكاليف..." 
+                            class="form-control"></textarea>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-actions">
+                <button type="submit" 
+                        class="btn-submit-luxury" 
+                        [disabled]="isSubmitting() || !fullName().trim() || !phone().trim()">
+                  <span class="submit-icon-circle">
+                    <i class="fa-brands fa-whatsapp"></i>
+                  </span>
+                  <span class="submit-text">إرسال الطلب عبر واتساب وبدء التنسيق المباشر</span>
+                  <i class="fa-solid fa-arrow-left submit-arrow"></i>
+                </button>
+                <div class="form-trust-banner">
+                  <i class="fa-solid fa-shield-halved trust-shield-icon"></i>
+                  <span>بياناتك محمية بسرية تامة ولا تُستخدم إلا للتواصل المباشر بخصوص مشروعك.</span>
+                </div>
+              </div>
+            </form>
+          }
+        </div>
+      </div>
+
+      <!-- Left Column: Office Information & Interactive Map -->
+      <div class="office-side" id="map-section">
+        
+        <!-- Office Location Card -->
+        <div class="office-info-card">
+          <div class="office-top-accent"></div>
+
+          <div class="office-card-header">
+            <div class="office-badge">
+              <i class="fa-solid fa-building-user"></i>
+              <span>المقر الرئيسي والاستقبال</span>
+            </div>
+            <h3 class="office-card-title">مقر شركة الراشد بمحافظة الأحساء</h3>
+            <p class="office-card-desc">
+              نرحب بزيارتكم لمقرنا لبحث تفاصيل مشروعكم، استعراض كتالوجات ومواصفات معدات المسابح، والاتفاق على بنود التنفيذ.
+            </p>
+          </div>
+
+          <div class="office-meta-tiles">
+            <div class="office-meta-tile">
+              <div class="tile-icon-box ocean">
+                <i class="fa-solid fa-map-location-dot"></i>
+              </div>
+              <div class="tile-text-box">
+                <span class="tile-label">العنوان الجغرافي:</span>
+                <span class="tile-value">{{ company.location.fullAddress }}</span>
+              </div>
+            </div>
+
+            <div class="office-meta-tile">
+              <div class="tile-icon-box amber">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <div class="tile-text-box">
+                <span class="tile-label">أوقات العمل المكتبي والميداني:</span>
+                <span class="tile-value">السبت إلى الخميس: 8:00 ص – 8:00 م</span>
+                <span class="tile-sub">الجمعة: استقبال الطلبات الطارئة والمحادثات الميدانية عبر واتساب</span>
+              </div>
+            </div>
+
+            <div class="office-meta-tile">
+              <div class="tile-icon-box green">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div class="tile-text-box">
+                <span class="tile-label">نطاق التغطية الميدانية:</span>
+                <span class="tile-value">الأحساء • المنطقة الشرقية • والمشاريع الكبرى بالمملكة</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Google Maps Embed Container -->
+        <div class="map-embed-wrapper">
+          <div class="map-top-bar">
+            <div class="map-top-bar-title">
+              <span class="radar-ping"></span>
+              <span class="map-location-tag">الأحساء — المبرز — حي الراشدية (مقر مؤسسة الراشد)</span>
+            </div>
+            <a [href]="company.location.googleMapsUrl" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="map-external-link-pill">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              <span>فتح في خرائط جوجل</span>
+            </a>
+          </div>
+
+          <div class="map-interactive-box">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.667351659858!2d49.59511407629555!3d25.44641407755088!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e37bdc40bc29cc7%3A0x4ea3a86a538d189b!2z2YXZiNmI2LPYs9ipINin2YTYsdin2LTYryDZhNmE2YXYs9in2K3YrCDZiNin2YTZhdmC2KfZiNin2YTYudmI2KfYstmE!5e0!3m2!1sar!2ssa!4v1700000000000" 
+                    title="موقع مقر مؤسسة الراشد للمسابح والمقاولات والعوازل في الراشدية بالمبرز بالأحساء"
+                    width="100%" 
+                    height="360" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade" 
+                    class="google-map-iframe"></iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 3 — FREQUENTLY ASKED QUESTIONS (الأسئلة الشائعة حول التواصل والتعاقد)
+     ========================================================================== -->
+<section id="contact-faq" class="section-padding faq-section">
+  <div class="container">
+    <div class="section-head text-center">
+      <div class="section-badge navy">
+        <i class="fa-solid fa-circle-question"></i>
+        <span>دليل الأسئلة والاستفسارات الشائعة</span>
+      </div>
+      <h2 class="section-title">
+        الأسئلة الشائعة حول التواصل وإجراءات التعاقد
+      </h2>
+      <p class="section-lead-text">
+        إجابات واضحة ومباشرة عن أكثر التساؤلات التي يطرحها عملاؤنا قبل بدء تنفيذ مشاريعهم:
+      </p>
+    </div>
+
+    <div class="faq-accordion-wrap">
+      @for (faq of faqs; track faq.question; let idx = $index) {
+        <div class="faq-item" [class.active]="activeFaq() === idx">
+          <button type="button" 
+                  class="faq-header-btn" 
+                  [attr.aria-expanded]="activeFaq() === idx" 
+                  (click)="toggleFaq(idx)">
+            <span class="faq-question-text">{{ faq.question }}</span>
+            <span class="faq-toggle-icon">
+              <i class="fa-solid" [ngClass]="activeFaq() === idx ? 'fa-minus' : 'fa-plus'"></i>
+            </span>
+          </button>
+          
+          <div class="faq-answer-pane" [class.open]="activeFaq() === idx">
+            <div class="faq-answer-inner">
+              <p class="faq-answer-text">{{ faq.answer }}</p>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================================================
+     SECTION 4 — DIRECT CONSULTATION CTA (Matches About Us Luxury Style)
+     ========================================================================== -->
+<section class="contact-cta-section">
+  <div class="contact-cta-bg">
+    <img src="/last-projects/Expansive Concrete Foundation Construction Site.webp" 
+         alt="مشاريع شركة الراشد للمسابح والعوازل والمقاولات العامة" 
+         class="contact-cta-bg-img" 
+         loading="lazy" 
+         width="1920" 
+         height="800">
+    <div class="contact-cta-overlay"></div>
+    <div class="contact-cta-grid-pattern"></div>
+    <div class="contact-cta-glow"></div>
+  </div>
+
+  <div class="container contact-cta-container">
+    <div class="contact-cta-content">
+      <!-- Luxury Badge -->
+      <div class="contact-cta-badge">
+        <i class="fa-solid fa-award"></i>
+        <span>تنفيذ دقيق وضمان شامل • كود البناء السعودي</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h2 class="contact-cta-title">
+        جاهزون لتنفيذ مسبحك أو مشروعك
+        <span class="contact-cta-highlight">بأعلى معايير الجودة والإتقان</span>
+      </h2>
+
+      <!-- Description -->
+      <p class="contact-cta-text">
+        احصل على معاينة ميدانية لموقعك مع حساب دقيق للتكاليف والكميات وفق اشتراطات كود البناء السعودي.
+      </p>
+
+      <!-- Action Button -->
+      <div class="contact-cta-actions">
+        <a href="#consultation" 
+           class="cta-btn-luxury">
+          <span class="btn-icon-box">
+            <i class="fa-solid fa-file-signature"></i>
+          </span>
+          <span class="btn-text">اطلب عرض سعر لمشروعك الآن</span>
+          <i class="fa-solid fa-arrow-left btn-arrow"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

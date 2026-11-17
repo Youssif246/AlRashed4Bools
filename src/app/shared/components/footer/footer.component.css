@@ -275,6 +275,16 @@
   transition: color var(--transition-fast);
 }
 
+.location-link {
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.location-link:hover {
+  color: var(--color-ocean-300);
+  text-decoration: underline;
+}
+
 .phone-link:hover {
   color: var(--color-coral-400);
 }

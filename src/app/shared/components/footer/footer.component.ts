@@ -16,10 +16,10 @@ export class FooterComponent {
   readonly currentYear = new Date().getFullYear();
 
   readonly servicesList = [
-    { name: 'تصميم وبناء المسابح الفاخرة', route: '/services', fragment: 'pools' },
+    { name: 'تصميم وبناء المسابح', route: '/services', fragment: 'pools' },
     { name: 'مسابح الأوفرفلو والإنفينيتي', route: '/services', fragment: 'pools' },
     { name: 'معدات وفلاتر ومضخات المسابح', route: '/services', fragment: 'equipment' },
-    { name: 'العزل المائي والحراري المعتمد', route: '/services', fragment: 'insulation' },
+    { name: 'العزل المائي والحراري', route: '/services', fragment: 'insulation' },
     { name: 'أعمال العظم والخرسانات والأساسات', route: '/services', fragment: 'contracting' },
     { name: 'التشطيبات والسباكة والكهرباء', route: '/services', fragment: 'contracting' }
   ];
