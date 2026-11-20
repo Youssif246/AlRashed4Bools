@@ -97,10 +97,12 @@
    -------------------------------------------------------------------------- */
 .services-hero {
   position: relative;
-  background: linear-gradient(135deg, #0A1E3F 0%, #112F5E 50%, #0D2347 100%);
+  background: linear-gradient(165deg, #051329 0%, #0A1E3F 35%, #0F2D59 70%, #061730 100%);
   color: #FFFFFF;
-  padding: 6rem 0 4.5rem;
+  padding: clamp(5.5rem, 8vw, 7.5rem) 0 clamp(4rem, 6vw, 5.25rem);
   overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: inset 0 -1px 0 rgba(56, 189, 248, 0.22);
 }
 
 @media (min-width: 768px) {
@@ -120,7 +122,7 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  opacity: 0.38;
+  opacity: 0.36;
   filter: saturate(1.15) brightness(1.05);
   transform: scale(1.03);
 }
@@ -130,18 +132,18 @@
   inset: 0;
   background: linear-gradient(
     180deg,
-    rgba(10, 30, 63, 0.82) 0%,
-    rgba(17, 47, 94, 0.76) 50%,
-    rgba(10, 30, 63, 0.92) 100%
+    rgba(5, 19, 41, 0.86) 0%,
+    rgba(10, 30, 63, 0.74) 50%,
+    rgba(5, 19, 41, 0.95) 100%
   );
 }
 
 .services-hero-grid-pattern {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 36px 36px;
-  opacity: 0.55;
+  background-image: radial-gradient(rgba(56, 189, 248, 0.14) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.65;
   pointer-events: none;
 }
 
@@ -149,8 +151,8 @@
   position: absolute;
   top: -10%;
   right: 15%;
-  width: 500px;
-  height: 500px;
+  width: 520px;
+  height: 520px;
   background: radial-gradient(circle, rgba(56, 189, 248, 0.22) 0%, transparent 70%);
   filter: blur(80px);
   pointer-events: none;
@@ -257,7 +259,7 @@
   color: #FFFFFF !important;
   margin-bottom: 1.25rem;
   letter-spacing: -0.01em;
-  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.35);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.45);
 }
 
 .services-title-gradient {
@@ -268,12 +270,12 @@
 }
 
 .services-hero-subtitle {
-  font-size: clamp(1rem, 1.4vw, 1.18rem);
-  line-height: 1.95;
-  color: rgba(255, 255, 255, 0.92);
-  max-width: 820px;
-  margin: 0 auto 2.5rem;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.25);
+  font-size: clamp(1rem, 1.35vw, 1.15rem);
+  line-height: 1.9;
+  color: rgba(241, 245, 249, 0.94);
+  max-width: 780px;
+  margin: 0 auto 2.25rem;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Quick Navigation Anchor Bar */
@@ -588,7 +590,7 @@
   background: #FFFFFF;
   border: 1px solid var(--color-border-subtle);
   border-radius: 1.35rem;
-  padding: 2.25rem 2rem;
+  padding: 0;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(10, 25, 47, 0.05);
   display: flex;
@@ -631,6 +633,34 @@
   background: linear-gradient(90deg, #0D9488, #2DD4BF);
 }
 
+/* Equipment Card Top Cover Image Banner */
+.eq-card-media {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: #0A1E3F;
+}
+
+.eq-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.equipment-card:hover .eq-card-img {
+  transform: scale(1.08);
+}
+
+.eq-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 30, 63, 0.15) 0%, rgba(10, 30, 63, 0.72) 100%);
+  pointer-events: none;
+}
+
 .eq-card-top {
   display: flex;
   align-items: center;
@@ -649,11 +679,31 @@
   transition: all var(--transition-normal);
 }
 
+.eq-icon-wrap.floating {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
 .theme-ocean .eq-icon-wrap {
   background: linear-gradient(135deg, rgba(2, 132, 199, 0.12) 0%, rgba(56, 189, 248, 0.18) 100%);
   color: #0284C7;
   border: 1px solid rgba(2, 132, 199, 0.28);
   box-shadow: 0 4px 14px rgba(2, 132, 199, 0.15);
+}
+
+.theme-ocean .eq-icon-wrap.floating {
+  background: rgba(10, 30, 63, 0.85);
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.45);
 }
 
 .theme-amber .eq-icon-wrap {
@@ -663,6 +713,12 @@
   box-shadow: 0 4px 14px rgba(249, 115, 22, 0.15);
 }
 
+.theme-amber .eq-icon-wrap.floating {
+  background: rgba(10, 30, 63, 0.85);
+  color: #FB923C;
+  border: 1px solid rgba(251, 146, 60, 0.45);
+}
+
 .theme-indigo .eq-icon-wrap {
   background: linear-gradient(135deg, rgba(99, 102, 241, 0.12) 0%, rgba(129, 140, 248, 0.18) 100%);
   color: #6366F1;
@@ -670,11 +726,23 @@
   box-shadow: 0 4px 14px rgba(99, 102, 241, 0.15);
 }
 
+.theme-indigo .eq-icon-wrap.floating {
+  background: rgba(10, 30, 63, 0.85);
+  color: #818CF8;
+  border: 1px solid rgba(129, 140, 248, 0.45);
+}
+
 .theme-teal .eq-icon-wrap {
   background: linear-gradient(135deg, rgba(13, 148, 136, 0.12) 0%, rgba(45, 212, 191, 0.18) 100%);
   color: #0D9488;
   border: 1px solid rgba(13, 148, 136, 0.28);
   box-shadow: 0 4px 14px rgba(13, 148, 136, 0.15);
+}
+
+.theme-teal .eq-icon-wrap.floating {
+  background: rgba(10, 30, 63, 0.85);
+  color: #2DD4BF;
+  border: 1px solid rgba(45, 212, 191, 0.45);
 }
 
 .equipment-card:hover .eq-icon-wrap {
@@ -690,10 +758,26 @@
   font-weight: 800;
 }
 
+.eq-badge.floating {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(10, 30, 63, 0.82);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
 .theme-ocean .eq-badge {
   background: rgba(2, 132, 199, 0.08);
   color: #0284C7;
   border: 1px solid rgba(2, 132, 199, 0.25);
+}
+
+.theme-ocean .eq-badge.floating {
+  border: 1px solid rgba(56, 189, 248, 0.45);
+  color: #7DD3FC;
 }
 
 .theme-amber .eq-badge {
@@ -702,10 +786,20 @@
   border: 1px solid rgba(249, 115, 22, 0.25);
 }
 
+.theme-amber .eq-badge.floating {
+  border: 1px solid rgba(251, 146, 60, 0.45);
+  color: #FDBA74;
+}
+
 .theme-indigo .eq-badge {
   background: rgba(99, 102, 241, 0.08);
   color: #4F46E5;
   border: 1px solid rgba(99, 102, 241, 0.25);
+}
+
+.theme-indigo .eq-badge.floating {
+  border: 1px solid rgba(129, 140, 248, 0.45);
+  color: #C7D2FE;
 }
 
 .theme-teal .eq-badge {
@@ -714,7 +808,13 @@
   border: 1px solid rgba(13, 148, 136, 0.25);
 }
 
+.theme-teal .eq-badge.floating {
+  border: 1px solid rgba(45, 212, 191, 0.45);
+  color: #5EEAD4;
+}
+
 .eq-content {
+  padding: 1.75rem 1.75rem 2rem;
   display: flex;
   flex-direction: column;
   flex-grow: 1;

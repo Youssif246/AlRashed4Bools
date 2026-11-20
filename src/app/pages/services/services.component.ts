@@ -141,7 +141,7 @@ export class ServicesComponent implements OnInit {
       titleEn: 'Overflow Luxury Pools (Mirror System)',
       badge: 'الخيار المفضل للقصور والفلل الحديثة',
       description: 'يتساوى منسوب سطح الماء تماماً مع مستوى الأرضيات المحيطة مع انسياب سلس داخل مجرى محيطي مخفي، ليمنحك مظهر مرآة مائية متصلة بدون أي حواجز بصرية.',
-      image: '/last-projects/Luxury-Overflow-Swimming-Pool.jpg',
+      image: 'assets/images/services/overflow-pool.jpg',
       imageAlt: 'تنفيذ مسابح الأوفرفلو للقصور والفلل في الأحساء - شركة الراشد',
       waterLevel: 'مستوٍ تماماً مع الأرضيات المحيطة (0 سم)',
       surgeTank: 'يتطلب خزان موازنة إضافي معزول تحت الأرض',
@@ -419,8 +419,8 @@ export class ServicesComponent implements OnInit {
       title: 'عزل القواعد والأساسات والميدات الإنشائية',
       badge: 'حماية الهيكل ضد الأملاح والمياه الجوفية',
       description: 'حماية خرسانات القواعد والرقاب والأساسات الجدارية ضد الرطوبة والمياه الجوفية باستخدام لفائف البيتومين المسلح والدهانات العازلة المطاطية وفق كود البناء السعودي.',
-      image: '/last-projects/Waterproofed Foundation Excavation.webp',
-      imageAlt: 'تنفيذ أعمال عزل الأساسات والقواعد الإنشائية لشركة الراشد',
+      image: 'assets/images/services/foundations-insulation.jpg',
+      imageAlt: 'تنفيذ أعمال عزل الأساسات والقواعد الإنشائية بالبيتومين المسلح - شركة الراشد',
       technologies: [
         'طبقات برايمر بيتوميني عالي التغلغل لسد المسام',
         'لفائف بيتومين مسلحة بالبوليستر بسمك 4 ملم',
@@ -435,8 +435,8 @@ export class ServicesComponent implements OnInit {
       title: 'عزل المسابح وخزانات المياه الأرضية',
       badge: 'عزل مائي مزدوج إيجابي وسلبي',
       description: 'منظومة عزل مائي محكمة تعتمد على المواد الإسمنتية والبوليمرية المطاطية المرنة ذات التماسك الفائق مع الخرسانة؛ غير سامة ومطابقة لاشتراطات مياه الشرب وتمنع التسريب تماماً.',
-      image: '/last-projects/Concrete Temperature Check.webp',
-      imageAlt: 'فحوصات الجودة وتجهيز عزل المسابح والخزانات بشركة الراشد',
+      image: 'assets/images/services/pool-insulation.jpg',
+      imageAlt: 'تنفيذ عزل المسابح وخزانات المياه الأرضية بالعازل البوليمري المعتمد - شركة الراشد',
       technologies: [
         'معجون إيبوكسي وفايبر مش مقوى للأركان والزوايا',
         'عازل بوليمري مرن مزدوج المكونات مقاوم لضغط المياه العالي',
@@ -451,8 +451,8 @@ export class ServicesComponent implements OnInit {
       title: 'عزل الأسطح المائي والحراري المتكامل',
       badge: 'نظام كومبو وحماية حرارية فائقة',
       description: 'عزل مزدوج مائي وحراري للأسطح الخرسانية والمعدنية؛ يحد من استهلاك أجهزة التكييف والكهرباء صيفاً ويمنع نفاذ مياه الأمطار والرطوبة شتاءً، بما يطابق اشتراطات كفاءة الطاقة السعودية.',
-      image: '/last-projects/Geometric Waterproofing in Progress.webp',
-      imageAlt: 'تنفيذ العزل المائي والحراري للأسطح',
+      image: 'assets/images/services/roof-insulation.jpg',
+      imageAlt: 'تنفيذ العزل المائي والحراري المتكامل بالفوم للأسطح - شركة الراشد',
       technologies: [
         'ألواح العزل الحراري عالي الكثافة المقاوم للحرارة',
         'أغشية عزل مائي متطورة مسلحة بالألياف',
@@ -471,7 +471,7 @@ export class ServicesComponent implements OnInit {
       title: 'تنفيذ مسبح أوفرفلو مع شلالات ديكورية',
       category: 'pools',
       categoryLabel: 'قطاع المسابح',
-      image: '/last-projects/Luxury-Overflow-Swimming-Pool.jpg',
+      image: 'assets/images/services/overflow-pool.jpg',
       imageAlt: 'مسبح أوفرفلو منفذ لفيلا في الأحساء',
       badge: 'مسابح الأوفرفلو',
       location: 'الأحساء — مجمع فلل سكنية'
@@ -545,6 +545,76 @@ export class ServicesComponent implements OnInit {
       imageAlt: 'تخطيط المحاور والخطوط الإنشائية بدقة ميدانياً',
       badge: 'إشراف ومساحة',
       location: 'المبرز — حي النزهة'
+    },
+    {
+      id: 9,
+      title: 'عزل مائي وحراري متعدد الطبقات للأسطح الخرسانية',
+      category: 'insulation',
+      categoryLabel: 'أعمال العزل المائي والحراري',
+      image: 'assets/images/services/roof-insulation.jpg',
+      imageAlt: 'تنفيذ عزل فوم مائي وحراري للأسطح الخرسانية بالأحساء',
+      badge: 'نظام عزل الأسطح',
+      location: 'الأحساء — حي الراشدية'
+    },
+    {
+      id: 10,
+      title: 'عزل الميدات والرقاب الإنشائية بالبيتومين المطاطي',
+      category: 'insulation',
+      categoryLabel: 'أعمال العزل المائي والحراري',
+      image: 'assets/images/services/foundations-insulation.jpg',
+      imageAlt: 'عزل القواعد والرقاب والميدات بمواد بيتومينية مطاطية معتمدة',
+      badge: 'حماية الأساسات',
+      location: 'المبرز — مشروع سكني خاص'
+    },
+    {
+      id: 11,
+      title: 'تجهيز واختبار طبقات عزل المسابح والخزانات الأرضية',
+      category: 'insulation',
+      categoryLabel: 'أعمال العزل المائي والحراري',
+      image: 'assets/images/services/pool-insulation.jpg',
+      imageAlt: 'عزل مائي بوليمري متخصص للمسابح والخزانات الأرضية',
+      badge: 'عزل مسابح معتمد',
+      location: 'الأحساء — منتجع ترفيهي'
+    },
+    {
+      id: 12,
+      title: 'صب خرساني متواصل بمضخات الخرسانة الجاهزة',
+      category: 'contracting',
+      categoryLabel: 'المقاولات والإنشاءات',
+      image: '/last-projects/Concrete Pouring Equipment at Construction Site.webp',
+      imageAlt: 'صب خرسانات جاهزة ومضخات متطورة في مشاريع الراشد',
+      badge: 'صب خرساني متواصل',
+      location: 'المبرز — مبنى تجاري'
+    },
+    {
+      id: 13,
+      title: 'حدادة وتسليح القواعد الشريطية والرقاب الإنشائية',
+      category: 'contracting',
+      categoryLabel: 'المقاولات والإنشاءات',
+      image: '/last-projects/Rebar Footings Under Construction.webp',
+      imageAlt: 'تسليح القواعد والرقاب الخرسانية بأعلى معايير كود البناء',
+      badge: 'تسليح إنشائي معتمد',
+      location: 'الأحساء — مخطط الربوة'
+    },
+    {
+      id: 14,
+      title: 'تنفيذ أعمال الهياكل الخرسانية والعظم لمشاريع الفلل',
+      category: 'contracting',
+      categoryLabel: 'المقاولات والإنشاءات',
+      image: '/last-projects/Aerial Foundation Construction Site.webp',
+      imageAlt: 'إشراف وتنفيذ أعمال العظم المتكاملة لشركة الراشد',
+      badge: 'مقاولات عامة',
+      location: 'الأحساء — مجمع فلل'
+    },
+    {
+      id: 15,
+      title: 'شلالات جدارية متدفقة ومصبات ستانلس ستيل فاخرة',
+      category: 'pools',
+      categoryLabel: 'قطاع المسابح',
+      image: '/last-projects/pool-waterfall-fountain.jpg',
+      imageAlt: 'تنفيذ شلالات ومصبات مائية ستانلس ستيل للمسابح',
+      badge: 'شلالات ومصبات',
+      location: 'الأحساء — فيلا خاصة'
     }
   ];
 
@@ -603,6 +673,13 @@ export class ServicesComponent implements OnInit {
 
   setCategory(category: 'all' | 'pools' | 'insulation' | 'contracting'): void {
     this.activeCategory = category;
+  }
+
+  getCategoryCount(category: 'all' | 'pools' | 'insulation' | 'contracting'): number {
+    if (category === 'all') {
+      return this.galleryItems.length;
+    }
+    return this.galleryItems.filter(item => item.category === category).length;
   }
 
   get filteredGallery(): GalleryItem[] {

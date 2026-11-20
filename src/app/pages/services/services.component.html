@@ -154,12 +154,19 @@
         <article class="equipment-card" [ngClass]="'theme-' + eq.theme">
           <div class="equipment-top-line"></div>
 
-          <!-- Top Row: Icon + Badge -->
-          <div class="eq-card-top">
-            <div class="eq-icon-wrap">
+          <!-- Top Cover Image Banner (Matching Pool & Insulation Card Style) -->
+          <div class="eq-card-media">
+            <img [src]="eq.image" 
+                 [alt]="eq.title" 
+                 class="eq-card-img" 
+                 loading="lazy" 
+                 width="600" 
+                 height="340">
+            <div class="eq-media-overlay"></div>
+            <span class="eq-badge floating">{{ eq.badge }}</span>
+            <div class="eq-icon-wrap floating">
               <i class="fa-solid" [ngClass]="eq.icon"></i>
             </div>
-            <span class="eq-badge">{{ eq.badge }}</span>
           </div>
 
           <!-- Main Content -->
@@ -306,7 +313,7 @@
                 type="button">
           <i class="fa-solid fa-border-all"></i>
           <span>كافة المشاريع</span>
-          <span class="filter-count">8</span>
+          <span class="filter-count">{{ getCategoryCount('all') }}</span>
         </button>
         <button class="filter-tab-btn" 
                 [class.active]="activeCategory === 'pools'" 
@@ -314,7 +321,7 @@
                 type="button">
           <i class="fa-solid fa-person-swimming"></i>
           <span>قطاع المسابح</span>
-          <span class="filter-count">3</span>
+          <span class="filter-count">{{ getCategoryCount('pools') }}</span>
         </button>
         <button class="filter-tab-btn" 
                 [class.active]="activeCategory === 'insulation'" 
@@ -322,7 +329,7 @@
                 type="button">
           <i class="fa-solid fa-shield-halved"></i>
           <span>قطاع العوازل</span>
-          <span class="filter-count">1</span>
+          <span class="filter-count">{{ getCategoryCount('insulation') }}</span>
         </button>
         <button class="filter-tab-btn" 
                 [class.active]="activeCategory === 'contracting'" 
@@ -330,7 +337,7 @@
                 type="button">
           <i class="fa-solid fa-trowel-bricks"></i>
           <span>المقاولات والإنشاءات</span>
-          <span class="filter-count">4</span>
+          <span class="filter-count">{{ getCategoryCount('contracting') }}</span>
         </button>
       </div>
     </div>
